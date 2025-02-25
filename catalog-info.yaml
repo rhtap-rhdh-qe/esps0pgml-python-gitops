@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: esps0pgml-python-gitops
+  description: This is GitOps manifest for esps0pgml-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=esps0pgml-python
+    backstage.io/kubernetes-id: esps0pgml-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: esps0pgml-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:esps0pgml-python
